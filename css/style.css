@@ -4,6 +4,7 @@ body {
   padding: 0;
   box-sizing: border-box;
   background-color: #ffc7e6;
+  overflow-x: hidden; /* Asegurarse de ocultar el scroll horizontal en cualquier dispositivo */
 }
 
 header {
@@ -389,10 +390,10 @@ input {
   justify-content: center;
   align-items: center;
 }
-/* Media query para dispositivos con un ancho máximo de 768px (tabletas y móviles) */
+/* Media query para dispositivos (tabletas y móviles) */
 @media (max-width: 999px) {
   body{
-    overflow-x: hidden;
+    overflow-x:hidden;
   }
   .logo {
     margin: 0;
@@ -470,6 +471,31 @@ input {
 
   .nav-bar a {
     margin-bottom: 10px;
+  }
+
+  .container-fluid {
+    padding: 0;
+  }
+
+  .navbar-collapse {
+    width: 100%; 
+  }
+
+  .logo {
+    margin-left: auto; 
+    margin-right: auto;
+  }
+
+  .venta-productos {
+    padding: 0 15px; 
+  }
+
+  .card {
+    width: 70%; 
+  }
+
+  .contenido-footer {
+    padding: 0 10px; 
   }
 
   .footer {
