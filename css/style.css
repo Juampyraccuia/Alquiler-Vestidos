@@ -391,6 +391,9 @@ input {
 }
 /* Media query para dispositivos con un ancho máximo de 768px (tabletas y móviles) */
 @media (max-width: 999px) {
+  body{
+    overflow-x: hidden;
+  }
   .logo {
     margin: 0;
   }
