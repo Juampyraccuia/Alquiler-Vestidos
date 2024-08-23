@@ -1,0 +1,24 @@
+// _mixins.scss
+
+@import "variables";
+
+@mixin button-styles($bg-color, $text-color, $hover-bg-color, $hover-text-color) {
+    display: inline-block;
+    padding: $button-padding;
+    background-color: $bg-color;
+    color: $text-color;
+    text-decoration: none;
+    border-radius: $border-radius;
+    transition:
+        background-color 0.3s,
+        color 0.3s;
+
+    &:hover {
+        background-color: $hover-bg-color;
+        color: $hover-text-color;
+    }
+}
+
+@mixin box-shadow($shadow) {
+    box-shadow: $shadow;
+}

@@ -1,0 +1,26 @@
+// _card.scss
+
+.card {
+    width: 70%;
+    margin: 10px;
+    height: auto;
+    background-color: #e0dddd7c;
+    border: 1px solid #ddd;
+    border-radius: 15px;
+    box-shadow: 0 10px 14px rgba(0, 0, 0, 0.2);
+
+    .card-img-top {
+        padding: 5px;
+        width: 100%;
+        height: auto;
+        border: 1px solid #ddd;
+        border-radius: 15px;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    }
+}
+
+.col {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}

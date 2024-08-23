@@ -1,0 +1,148 @@
+@media (max-width: 999px) {
+    body {
+        overflow-x: hidden;
+    }
+    .logo {
+        margin: 0;
+    }
+
+    .home {
+        visibility: visible;
+    }
+
+    .nav-item {
+        font-size: 20px;
+    }
+
+    .presentacion {
+        flex-direction: column;
+        padding: 20px;
+    }
+
+    .presentacion-text {
+        width: 100%;
+        text-align: center;
+    }
+
+    .presentacion-image img {
+        margin-top: 10px;
+        width: 100%;
+    }
+
+    .baner {
+        flex-direction: column;
+        padding: 20px;
+
+        .texto-baner {
+            width: 1000%;
+            margin-bottom: 20px;
+
+            h2 {
+                font-size: 30px;
+            }
+
+            p {
+                font-size: 20px;
+            }
+        }
+    }
+
+
+    .destacado {
+        width: 10%;
+        flex-direction: column;
+        transform: translateX(25%);
+    }
+
+    .producto-destacado {
+        margin-bottom: 15px;
+        height: auto;
+    }
+
+    .producto-destacado p {
+        font-size: 25px;
+    }
+
+    .producto-destacado img {
+        width: auto;
+        height: auto;
+    }
+
+    .forms-section {
+        flex-direction: column;
+    }
+
+    .form-container {
+        width: 90%;
+        margin-bottom: 20px;
+    }
+
+    .top-bar {
+        flex-direction: column;
+    }
+
+    .nav-bar {
+        flex-direction: column;
+    }
+
+    .nav-bar a {
+        margin-bottom: 10px;
+    }
+
+    .container-fluid {
+        padding: 0;
+    }
+
+    .navbar-collapse {
+        width: 100%;
+    }
+
+    .logo {
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .venta-productos {
+        padding: 0 15px;
+    }
+
+    .card {
+        width: 70%;
+    }
+
+    .contenido-footer {
+        padding: 0 10px;
+    }
+
+    .footer {
+        flex-direction: column;
+    }
+
+    .contenido-footer {
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .footer-redes {
+        margin-bottom: 20px;
+    }
+
+    .footer-redes a {
+        margin-right: 10px;
+    }
+
+    .footer-redes img {
+        width: 30px;
+        height: 30px;
+    }
+
+    .links-footer {
+        text-align: center;
+        font-size: 24px;
+    }
+
+    iframe {
+        width: 100%;
+    }
+}

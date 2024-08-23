@@ -1,0 +1,46 @@
+// _footer.scss
+
+.contenido-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+
+    .direccion-footer {
+        text-align: left;
+
+        p {
+            margin: 0;
+        }
+    }
+
+    .links-footer {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+
+        a {
+            text-decoration: none;
+            color: #fff;
+            margin: 5px 0;
+
+            &:hover {
+                color: #ff6f61;
+                text-decoration: underline;
+            }
+        }
+    }
+
+    .footer-redes {
+        a {
+            color: #fff;
+            font-size: 30px;
+            margin: 0 20px;
+
+            &:hover {
+                color: #ff6f61;
+            }
+        }
+    }
+}
