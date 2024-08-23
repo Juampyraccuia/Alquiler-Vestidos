@@ -1,0 +1,21 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    background-color: #ffc7e6;
+    overflow-x: hidden; /* Asegurarse de ocultar el scroll horizontal en cualquier dispositivo */
+}
+
+header {
+    display: flex;
+    flex-direction: column;
+    background-color: #ff6f61;
+    border-bottom: 1px solid #ddd;
+}
+
+footer {
+    background-color: #000;
+    color: #fff;
+    padding: 20px;
+}
