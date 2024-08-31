@@ -6,6 +6,7 @@
     @include flex-center;
     margin: 0;
     padding: 0;
+    background-color: $color-header;
 
     li {
         list-style: none;
@@ -19,8 +20,8 @@
             transition: all 0.3s ease;
 
             &:hover {
-                background-color: $color-primary;
-                color: #fff;
+                background-color: $color-accent;
+                color: $color-secondary;
             }
         }
     }

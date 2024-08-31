@@ -5,6 +5,8 @@ body {
   box-sizing: border-box;
   background-color: #FFF0F5;
   overflow-x: hidden;
+  font-size: 16px;
+  color: #202020;
 }
 
 header {
@@ -20,12 +22,27 @@ footer {
   padding: 20px;
 }
 
+.btn {
+  background-color: #C71585;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+.btn:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
 .navbar {
   display: flex;
   justify-content: center;
   align-items: center;
   margin: 0;
   padding: 0;
+  background-color: #F8BBD0;
 }
 .navbar li {
   list-style: none;
@@ -39,8 +56,8 @@ footer {
   transition: all 0.3s ease;
 }
 .navbar li a:hover {
-  background-color: #4B0082;
-  color: #fff;
+  background-color: #C71585;
+  color: #FF69B4;
 }
 
 .forms-section {
@@ -238,14 +255,16 @@ input {
 
 .presentacion {
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
   align-items: center;
+  justify-content: space-between;
   padding: 50px 20px;
 }
 .presentacion .presentacion-text {
   width: 50%;
 }
 .presentacion .presentacion-text h1 {
+  color: #C71585;
   font-size: 32px;
   margin: 0 0 20px;
 }
@@ -424,7 +443,7 @@ input {
     font-size: 16px;
   }
   .destacado {
-    width: 10%;
+    width: 70%;
     flex-direction: column;
     transform: translateX(25%);
   }
@@ -499,49 +518,6 @@ input {
   iframe {
     width: 100%;
   }
-}
-body {
-  font-family: Arial, sans-serif;
-  font-size: 16px;
-  background-color: #FFF0F5;
-  color: #202020;
-}
-
-.btn {
-  background-color: #C71585;
-  color: white;
-  border: none;
-  padding: 10px 20px;
-  border-radius: 5px;
-  cursor: pointer;
-  transition: all 0.3s ease;
-}
-.btn:hover {
-  transform: translateY(-3px);
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-}
-
-.navbar {
-  background-color: #F8BBD0;
-}
-.navbar a {
-  color: #4B0082;
-}
-.navbar a:hover {
-  color: #FF69B4;
-}
-
-.presentacion {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-.presentacion h1 {
-  color: #4B0082;
-  font-size: 32px;
-}
-.presentacion h1 em {
-  color: #FF69B4;
 }
 
 /*# sourceMappingURL=style.css.map */

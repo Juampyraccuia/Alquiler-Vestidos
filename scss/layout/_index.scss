@@ -1,17 +1,16 @@
-@import '../base/variables';
-@import '../base/mixins';
-
+@import "../base/variables";
+@import "../base/mixins";
 
 .presentacion {
-    display: flex;
+    @include flex-center;
     justify-content: space-between;
-    align-items: center;
     padding: $spacing-large $spacing-medium;
 
     .presentacion-text {
         width: 50%;
 
         h1 {
+            color: $color-accent;
             font-size: $font-size-xlarge;
             margin: 0 0 $spacing-medium;
 

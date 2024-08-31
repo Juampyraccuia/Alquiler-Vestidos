@@ -1,9 +1,6 @@
-// Importar variables y mixins
+// Base
 @import "./base/variables";
 @import "./base/mixins";
-
-
-// Base
 @import "base/reset";
 
 // Components
@@ -18,37 +15,3 @@
 @import "layout/venta-productos";
 @import "layout/media-queries";
 
-// Estilos globales
-body {
-    font-family: $font-main;
-    font-size: $font-size-base;
-    background-color: $color-background;
-    color: $color-text;
-}
-
-// Botones
-.btn {
-    @include button-styles;
-    @include hover-effect;
-}
-
-.navbar {
-    background-color: $color-header;
-    a {
-        color: $color-primary;
-        &:hover {
-            color: $color-secondary;
-        }
-    }
-}
-
-.presentacion {
-    @include flex-center;
-    h1 {
-        color: $color-primary;
-        font-size: $font-size-xlarge;
-        em {
-            color: $color-secondary;
-        }
-    }
-}

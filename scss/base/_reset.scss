@@ -7,6 +7,8 @@ body {
     box-sizing: border-box;
     background-color: $color-background;
     overflow-x: hidden; 
+    font-size: $font-size-base;
+    color: $color-text;
 }
 
 header {
@@ -20,4 +22,10 @@ footer {
     background-color: $color-footer;
     color: #fff;
     padding: $spacing-medium;
+}
+
+// Botones
+.btn {
+    @include button-styles;
+    @include hover-effect;
 }
