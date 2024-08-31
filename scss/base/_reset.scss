@@ -1,21 +1,23 @@
+@import './variables';
+
 body {
-    font-family: Arial, sans-serif;
+    font-family: $font-main;
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    background-color: #FFF0F5;
+    background-color: $color-background;
     overflow-x: hidden; 
 }
 
 header {
     display: flex;
     flex-direction: column;
-    background-color: #F8BBD0;
+    background-color: $color-header;
     border-bottom: 1px solid #ddd;
 }
 
 footer {
-    background-color: #000;
+    background-color: $color-footer;
     color: #fff;
-    padding: 20px;
+    padding: $spacing-medium;
 }

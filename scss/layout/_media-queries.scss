@@ -1,7 +1,12 @@
-@media (max-width: 999px) {
+@import '../base/variables';
+@import '../base/mixins';
+
+
+@include responsive($breakpoint-tablet) {
     body {
         overflow-x: hidden;
     }
+
     .logo {
         margin: 0;
     }
@@ -11,12 +16,12 @@
     }
 
     .nav-item {
-        font-size: 20px;
+        font-size: $font-size-large;
     }
 
     .presentacion {
         flex-direction: column;
-        padding: 20px;
+        padding: $spacing-medium;
     }
 
     .presentacion-text {
@@ -25,28 +30,27 @@
     }
 
     .presentacion-image img {
-        margin-top: 10px;
+        margin-top: $spacing-small;
         width: 100%;
     }
 
     .baner {
         flex-direction: column;
-        padding: 20px;
+        padding: $spacing-medium;
 
         .texto-baner {
             width: 100%;
-            margin-bottom: 20px;
+            margin-bottom: $spacing-medium;
 
             h2 {
-                font-size: 30px;
+                font-size: $font-size-large;
             }
 
             p {
-                font-size: 20px;
+                font-size: $font-size-base;
             }
         }
     }
-
 
     .destacado {
         width: 10%;
@@ -60,7 +64,7 @@
     }
 
     .producto-destacado p {
-        font-size: 25px;
+        font-size: $font-size-large;
     }
 
     .producto-destacado img {
@@ -86,7 +90,7 @@
     }
 
     .nav-bar a {
-        margin-bottom: 10px;
+        margin-bottom: $spacing-small;
     }
 
     .container-fluid {
@@ -111,7 +115,7 @@
     }
 
     .contenido-footer {
-        padding: 0 10px;
+        padding: 0 $spacing-small;
     }
 
     .footer {
@@ -125,11 +129,11 @@
     }
 
     .footer-redes {
-        margin-bottom: 20px;
+        margin-bottom: $spacing-medium;
     }
 
     .footer-redes a {
-        margin-right: 10px;
+        margin-right: $spacing-small;
     }
 
     .footer-redes img {
@@ -139,7 +143,7 @@
 
     .links-footer {
         text-align: center;
-        font-size: 24px;
+        font-size: $font-size-large;
     }
 
     iframe {

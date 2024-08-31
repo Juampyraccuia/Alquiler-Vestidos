@@ -1,39 +1,43 @@
-// _layout.scss
+@import '../base/variables';
+@import '../base/mixins';
+
 
 .presentacion {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 50px 20px;
+    padding: $spacing-large $spacing-medium;
 
     .presentacion-text {
         width: 50%;
 
         h1 {
-            font-size: 48px;
-            margin: 0 0 20px;
+            font-size: $font-size-xlarge;
+            margin: 0 0 $spacing-medium;
 
             em {
                 font-style: italic;
-                color: #4B0082;
+                color: $color-primary;
             }
         }
 
         p {
-            font-size: 18px;
-            margin: 0 0 20px;
+            font-size: $font-size-base;
+            margin: 0 0 $spacing-medium;
         }
 
         a {
             display: inline-block;
-            padding: 10px 20px;
-            background-color: #4B0082;
+            padding: $spacing-small $spacing-medium;
+            background-color: $color-primary;
             color: #fff;
             text-decoration: none;
             border-radius: 5px;
+            transition: all 0.3s ease;
 
             &:hover {
-                box-shadow: #000;
+                background-color: $color-secondary;
+                box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
             }
         }
     }
@@ -50,38 +54,41 @@
 
 .baner {
     display: flex;
-    padding: 50px 20px;
+    padding: $spacing-large $spacing-medium;
     justify-content: center;
-
 
     .texto-baner {
         display: flex;
         flex-direction: column;
         align-items: center;
-        
-        background-color: #4B0082;
+        background-color: $color-primary;
         color: #fff;
-        padding: 20px;
+        padding: $spacing-medium;
         border-radius: 10px;
 
         h2 {
             text-align: center;
-            font-size: 32px;
-            margin: 0 0 20px;
+            font-size: $font-size-large;
+            margin: 0 0 $spacing-medium;
         }
 
         p {
             text-align: center;
-            font-size: 18px;
-            margin: 0 0 20px;
+            font-size: $font-size-base;
+            margin: 0 0 $spacing-medium;
         }
 
         a {
-            padding: 10px 20px;
-            background-color: #C71585;
+            padding: $spacing-small $spacing-medium;
+            background-color: $color-accent;
             color: #ffffff;
             text-decoration: none;
             border-radius: 5px;
+            transition: all 0.3s ease;
+
+            &:hover {
+                background-color: $color-secondary;
+            }
         }
     }
 }
@@ -94,18 +101,20 @@
 
     .producto-destacado {
         text-align: center;
-        color: #202020;
+        color: $color-text;
         border-style: outset;
         border-color: #f5f5f5;
         border-radius: 5px;
         text-decoration: none;
-        margin-bottom: 10px;
+        margin-bottom: $spacing-small;
         height: auto;
-        background-color: #F8BBD0;
+        background-color: $color-header;
+        transition: all 0.3s ease;
 
         &:hover {
-            box-shadow: 0 0 10px rgb(218, 112, 170);
+            box-shadow: 0 0 10px $color-secondary;
             border-style: none;
+            transform: translateY(-5px);
         }
 
         img {
@@ -117,26 +126,24 @@
         }
 
         p {
-            font-size: 16px;
-            margin: 10px 0 0;
+            font-size: $font-size-base;
+            margin: $spacing-small 0 0;
         }
     }
 }
 
 .graff {
-    background-color: #4B0082;
+    background-color: $color-primary;
     color: #fff;
     text-align: center;
-    padding: 20px;
+    padding: $spacing-medium;
     font-size: 30px;
 
     em {
         font-style: italic;
-        color: #FF69B4;
+        color: $color-secondary;
     }
 }
-
-
 
 .seccion-productos {
     display: flex;
@@ -150,9 +157,9 @@
     .producto {
         width: 100%;
         height: 100%;
-        margin: 10px;
+        margin: $spacing-small;
         text-align: center;
-        gap: 20px;
+        gap: $spacing-medium;
 
         img {
             max-width: 100%;

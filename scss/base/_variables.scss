@@ -1,17 +1,23 @@
-// _variables.scss
+// Variables de color
+$color-primary: #4B0082;
+$color-secondary: #FF69B4;
+$color-background: #FFF0F5;
+$color-text: #202020;
+$color-accent: #C71585;
+$color-header: #F8BBD0;
+$color-footer: #000;
 
-// Colores
-$primary-color: #ff6f61;
-$secondary-color: #ffd700;
-$text-color: #000;
-$background-color: #fff;
-$border-color: #ddd;
-$hover-primary-color: #724743;
-$hover-secondary-color: #ffd700;
+// Variables de fuente
+$font-main: Arial, sans-serif;
+$font-size-base: 16px;
+$font-size-large: 24px;
+$font-size-xlarge: 32px;
 
-// Tamaños
-$button-padding: 10px 20px;
-$border-radius: 5px;
+// Variables de espaciado
+$spacing-small: 10px;
+$spacing-medium: 20px;
+$spacing-large: 50px;
 
-// Sombras
-$box-shadow: 0 10px 14px rgba(0, 0, 0, 0.2);
+// Variables de breakpoints
+$breakpoint-tablet: 768px;
+$breakpoint-desktop: 1024px;

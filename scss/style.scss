@@ -1,15 +1,64 @@
-//Base
-@import"base/reset";
-@import"base/variables";
-@import"base/mixins";
-//Components
-@import"components/navbar";
-@import"components/form";
-@import"components/card";
+// Importar variables y mixins
+@import "./base/variables";
+@import "./base/mixins";
 
-//Layout
-@import"layout/media-queries";
-@import"layout/footer";
-@import"layout/header";
-@import"layout/layout";
-@import"layout/venta-productos";
+// Animaciones
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+// Base
+@import "base/reset";
+
+// Components
+@import "components/navbar";
+@import "components/form";
+@import "components/card";
+
+// Layout
+@import "layout/media-queries";
+@import "layout/footer";
+@import "layout/header";
+@import "layout/index";
+@import "layout/venta-productos";
+
+// Estilos globales
+body {
+    font-family: $font-main;
+    font-size: $font-size-base;
+    background-color: $color-background;
+    color: $color-text;
+    animation: fadeIn 0.5s ease-in;
+}
+
+// Botones
+.btn {
+    @include button-styles;
+    @include hover-effect;
+}
+
+.navbar {
+    background-color: $color-header;
+    a {
+        color: $color-primary;
+        &:hover {
+            color: $color-secondary;
+        }
+    }
+}
+
+.presentacion {
+    @include flex-center;
+    h1 {
+        color: $color-primary;
+        font-size: $font-size-xlarge;
+        em {
+            color: $color-secondary;
+        }
+    }
+}

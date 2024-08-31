@@ -1,24 +1,28 @@
-// _mixins.scss
+@mixin flex-center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
 
-@import "variables";
-
-@mixin button-styles($bg-color, $text-color, $hover-bg-color, $hover-text-color) {
-    display: inline-block;
-    padding: $button-padding;
-    background-color: $bg-color;
-    color: $text-color;
-    text-decoration: none;
-    border-radius: $border-radius;
-    transition:
-        background-color 0.3s,
-        color 0.3s;
-
+@mixin hover-effect {
     &:hover {
-        background-color: $hover-bg-color;
-        color: $hover-text-color;
+        transform: translateY(-3px);
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     }
 }
 
-@mixin box-shadow($shadow) {
-    box-shadow: $shadow;
+@mixin button-styles {
+    background-color: $color-accent;
+    color: white;
+    border: none;
+    padding: $spacing-small $spacing-medium;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+@mixin responsive($breakpoint) {
+    @media (max-width: $breakpoint) {
+        @content;
+    }
 }

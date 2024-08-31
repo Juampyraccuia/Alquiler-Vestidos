@@ -1,13 +1,15 @@
-// _card.scss
+@import '../base/variables';
+@import '../base/mixins';
 
 .card {
     width: 70%;
-    margin: 10px;
+    margin: $spacing-small;
     height: auto;
-    background-color: #e0dddd7c;
+    background-color: rgba($color-header, 0.7);
     border: 1px solid #ddd;
     border-radius: 15px;
     box-shadow: 0 10px 14px rgba(0, 0, 0, 0.2);
+    @include hover-effect;
 
     .card-img-top {
         padding: 5px;
@@ -20,7 +22,5 @@
 }
 
 .col {
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    @include flex-center;
 }

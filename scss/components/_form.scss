@@ -1,22 +1,22 @@
-// _forms.scss
+@import '../base/variables';
+@import '../base/mixins';
 
 .forms-section {
     display: flex;
     justify-content: space-around;
-    padding: 50px 20px;
-
+    padding: $spacing-large $spacing-medium;
 
     .form-container {
         width: 45%;
         background-color: #c2c2c2;
-        padding: 10px;
+        padding: $spacing-small;
         border-radius: 10px;
         box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-        margin-bottom: 10px;
+        margin-bottom: $spacing-small;
 
         h2 {
-            font-size: 24px;
-            margin-bottom: 20px;
+            font-size: $font-size-large;
+            margin-bottom: $spacing-medium;
             text-align: center;
         }
 
@@ -39,7 +39,7 @@
 
                     input {
                         width: 90%;
-                        padding: 10px;
+                        padding: $spacing-small;
                         border: 1px solid #ddd;
                         border-radius: 5px;
                     }
@@ -47,16 +47,17 @@
             }
 
             .form__bottom {
-                padding: 10px 20px;
-                background-color: #ff6f61;
+                padding: $spacing-small $spacing-medium;
+                background-color: $color-accent;
                 color: #fff;
                 border: none;
                 border-radius: 5px;
                 cursor: pointer;
+                @include hover-effect;
 
                 &:hover {
-                    background-color: #ffd700;
-                    color: #000;
+                    background-color: $color-secondary;
+                    color: $color-text;
                 }
             }
         }
@@ -68,7 +69,7 @@ label {
 }
 
 input {
-    padding: 10px;
+    padding: $spacing-small;
     border: 1px solid #ddd;
     border-radius: 5px;
     margin-bottom: 15px;

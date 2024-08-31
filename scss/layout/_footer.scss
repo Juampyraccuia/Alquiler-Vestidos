@@ -1,4 +1,6 @@
-// _footer.scss
+@import '../base/variables';
+@import '../base/mixins';
+
 
 .contenido-footer {
     display: flex;
@@ -9,7 +11,6 @@
 
     .direccion-footer {
         text-align: left;
-
         p {
             margin: 0;
         }
@@ -24,9 +25,10 @@
             text-decoration: none;
             color: #fff;
             margin: 5px 0;
+            transition: color 0.3s ease;
 
             &:hover {
-                color: #ff6f61;
+                color: $color-secondary;
                 text-decoration: underline;
             }
         }
@@ -36,10 +38,11 @@
         a {
             color: #fff;
             font-size: 30px;
-            margin: 0 20px;
+            margin: 0 $spacing-medium;
+            transition: color 0.3s ease;
 
             &:hover {
-                color: #ff6f61;
+                color: $color-secondary;
             }
         }
     }
