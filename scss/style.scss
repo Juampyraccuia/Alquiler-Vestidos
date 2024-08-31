@@ -2,15 +2,6 @@
 @import "./base/variables";
 @import "./base/mixins";
 
-// Animaciones
-@keyframes fadeIn {
-    from {
-        opacity: 0;
-    }
-    to {
-        opacity: 1;
-    }
-}
 
 // Base
 @import "base/reset";
@@ -21,11 +12,11 @@
 @import "components/card";
 
 // Layout
-@import "layout/media-queries";
 @import "layout/footer";
 @import "layout/header";
 @import "layout/index";
 @import "layout/venta-productos";
+@import "layout/media-queries";
 
 // Estilos globales
 body {
@@ -33,7 +24,6 @@ body {
     font-size: $font-size-base;
     background-color: $color-background;
     color: $color-text;
-    animation: fadeIn 0.5s ease-in;
 }
 
 // Botones
