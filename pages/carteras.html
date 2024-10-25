@@ -75,90 +75,99 @@
     <ul id="lista-carrito"></ul>
     <p id="total-carrito">Total: $0.00</p>
   </div>
-
-  <section class="venta-productos">
-    <div class="row row-cols-1 row-cols-md-3 g-1">
+  <section class="filtros-productos container mt-4 mb-4">
+    <div class="row">
+      <div class="col-md-4 mb-3">
+        <input type="text" id="buscador-productos" class="form-control" placeholder="Buscar productos...">
+      </div>
+      <div class="col-md-4 mb-3">
+        <select id="filtro-precio" class="form-select">
+          <option value="">Ordenar por precio</option>
+          <option value="asc">Menor a mayor</option>
+          <option value="desc">Mayor a menor precio</option>
+        </select>
+      </div>
+      <div class="col-md-4 mb-3">
+        <select id="filtro-talle" class="form-select">
+          <option value="todos">Todos los talles</option>
+          <option value="XS">XS</option>
+          <option value="S">S</option>
+          <option value="M">M</option>
+          <option value="L">L</option>
+          <option value="XL">XL</option>
+        </select>
+      </div>
+    </div>
+  </section>
+  <section class="venta-productos container">
+    <div class="row row-cols-3 row-cols-md-3 g-4">
       <div class="col">
-        <div class="card text-center">
-          <img src="../img/cartera.webp" class="card-img-top" alt="Cartera" />
+        <div class="card text-center" data-talle="XS">
+          <img src="../img/cartera.webp" class="card-img-top" alt="Producto XS" />
           <div class="card-body">
-            <h5 class="card-title">Nombre del Producto 1</h5>
+            <h5 class="card-title">Nombre del Producto XS</h5>
             <p class="card-text">
               Perfecto para la fiesta de tus sueños. <br />
-              $ 94.000
+              $ 89.000
             </p>
-            <button class="btn btn-primary agregar-al-carrito" data-nombre="Nombre del Producto 1" data-precio="94000"
-              data-imagen="../img/cartera.webp">Agregar al Carrito</button>
+            <button class="btn btn-primary agregar-al-carrito" data-nombre="Nombre del Producto XS" data-precio="89000"
+              data-imagen="../img/cartera.webp" data-talle="XS">Agregar al Carrito</button>
           </div>
         </div>
       </div>
       <div class="col">
-        <div class="card text-center">
-          <img src="../img/cartera.webp" class="card-img-top" alt="Cartera" />
+        <div class="card text-center" data-talle="S">
+          <img src="../img/cartera.webp" class="card-img-top" alt="Producto S" />
           <div class="card-body">
-            <h5 class="card-title">Nombre del Producto 2</h5>
+            <h5 class="card-title">Nombre del Producto S</h5>
             <p class="card-text">
               Perfecto para la fiesta de tus sueños. <br />
-              $ 94.000
+              $ 92.000
             </p>
-            <button class="btn btn-primary agregar-al-carrito" data-nombre="Nombre del Producto 2" data-precio="94000"
-              data-imagen="../img/cartera.webp">Agregar al Carrito</button>
+            <button class="btn btn-primary agregar-al-carrito" data-nombre="Nombre del Producto S" data-precio="92000"
+              data-imagen="../img/cartera.webp" data-talle="S">Agregar al Carrito</button>
           </div>
         </div>
       </div>
       <div class="col">
-        <div class="card text-center">
-          <img src="../img/cartera.webp" class="card-img-top" alt="Cartera" />
+        <div class="card text-center" data-talle="M">
+          <img src="../img/cartera.webp" class="card-img-top" alt="Producto M" />
           <div class="card-body">
-            <h5 class="card-title">Nombre del Producto 3</h5>
+            <h5 class="card-title">Nombre del Producto M</h5>
             <p class="card-text">
               Perfecto para la fiesta de tus sueños. <br />
               $ 94.000
             </p>
-            <button class="btn btn-primary agregar-al-carrito" data-nombre="Nombre del Producto 3" data-precio="94000"
-              data-imagen="../img/cartera.webp">Agregar al Carrito</button>
+            <button class="btn btn-primary agregar-al-carrito" data-nombre="Nombre del Producto M" data-precio="94000"
+              data-imagen="../img/cartera.webp" data-talle="M">Agregar al Carrito</button>
           </div>
         </div>
       </div>
       <div class="col">
-        <div class="card text-center">
-          <img src="../img/cartera.webp" class="card-img-top" alt="Cartera" />
+        <div class="card text-center" data-talle="L">
+          <img src="../img/cartera.webp" class="card-img-top" alt="Producto L" />
           <div class="card-body">
-            <h5 class="card-title">Nombre del Producto 4</h5>
+            <h5 class="card-title">Nombre del Producto L</h5>
             <p class="card-text">
               Perfecto para la fiesta de tus sueños. <br />
-              $ 94.000
+              $ 96.000
             </p>
-            <button class="btn btn-primary agregar-al-carrito" data-nombre="Nombre del Producto 4" data-precio="94000"
-              data-imagen="../img/cartera.webp">Agregar al Carrito</button>
+            <button class="btn btn-primary agregar-al-carrito" data-nombre="Nombre del Producto L" data-precio="96000"
+              data-imagen="../img/cartera.webp" data-talle="L">Agregar al Carrito</button>
           </div>
         </div>
       </div>
       <div class="col">
-        <div class="card text-center">
-          <img src="../img/cartera.webp" class="card-img-top" alt="Cartera" />
+        <div class="card text-center" data-talle="XL">
+          <img src="../img/cartera.webp" class="card-img-top" alt="Producto XL" />
           <div class="card-body">
-            <h5 class="card-title">Nombre del Producto 5</h5>
+            <h5 class="card-title">Nombre del Producto XL</h5>
             <p class="card-text">
               Perfecto para la fiesta de tus sueños. <br />
-              $ 94.000
+              $ 98.000
             </p>
-            <button class="btn btn-primary agregar-al-carrito" data-nombre="Nombre del Producto 5" data-precio="94000"
-              data-imagen="../img/cartera.webp">Agregar al Carrito</button>
-          </div>
-        </div>
-      </div>
-      <div class="col">
-        <div class="card text-center">
-          <img src="../img/cartera.webp" class="card-img-top" alt="Cartera" />
-          <div class="card-body">
-            <h5 class="card-title">Nombre del Producto 6</h5>
-            <p class="card-text">
-              Perfecto para la fiesta de tus sueños. <br />
-              $ 94.000
-            </p>
-            <button class="btn btn-primary agregar-al-carrito" data-nombre="Nombre del Producto 6" data-precio="94000"
-              data-imagen="../img/cartera.webp">Agregar al Carrito</button>
+            <button class="btn btn-primary agregar-al-carrito" data-nombre="Nombre del Producto XL" data-precio="98000"
+              data-imagen="../img/cartera.webp" data-talle="XL">Agregar al Carrito</button>
           </div>
         </div>
       </div>
