@@ -97,7 +97,7 @@ document.addEventListener('DOMContentLoaded', function () {
   }
 
   function mostrarProductos(productosMostrar) {
-    const contenedorProductos = document.querySelector('venta-productos');
+    const contenedorProductos = document.querySelector('.row-cols-1');
     if (!contenedorProductos) {
       console.error('El contenedor de productos no se encontró.');
       return; // Salir de la función si no se encuentra el contenedor
