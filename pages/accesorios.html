@@ -8,22 +8,22 @@
     integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous" />
   <link rel="stylesheet" href="../css/style.css" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" />
-  <title>Ropa Interior</title>
+  <title>Ropa Interior - Vestidos en Alquiler</title>
   <meta name="title" content="Vestidos en Alquiler" />
-  <meta name="description" content="Quieres alquilar tu vestido? Esta es la mejor pagina" />
+  <meta name="description" content="Quieres alquilar tu vestido? Esta es la mejor página" />
 
   <!-- Open Graph / Facebook -->
   <meta property="og:type" content="website" />
   <meta property="og:url" content="https://juampyraccuia.github.io/Alquiler-Vestidos/index.html" />
   <meta property="og:title" content="Vestidos en Alquiler" />
-  <meta property="og:description" content="Quieres alquilar tu vestido? Esta es la mejor pagina" />
+  <meta property="og:description" content="Quieres alquilar tu vestido? Esta es la mejor página" />
   <meta property="og:image" content="https://metatags.io/images/meta-tags.png" />
 
   <!-- Twitter -->
   <meta property="twitter:card" content="summary_large_image" />
   <meta property="twitter:url" content="https://juampyraccuia.github.io/Alquiler-Vestidos/index.html" />
   <meta property="twitter:title" content="Vestidos en Alquiler" />
-  <meta property="twitter:description" content="Quieres alquilar tu vestido? Esta es la mejor pagina" />
+  <meta property="twitter:description" content="Quieres alquilar tu vestido? Esta es la mejor página" />
   <meta property="twitter:image" content="https://metatags.io/images/meta-tags.png" />
 </head>
 
@@ -31,14 +31,15 @@
   <header>
     <div class="top-bar">
       <div class="logo">
-        <a href="../index.html"><img src="../img/logo.png" alt="Logo" /></a>
+        <a href="../index.html" aria-label="Ir a página principal"><img src="../img/logo.png"
+            alt="Logo de la tienda" /></a>
       </div>
-      <button id="btn-carrito" class="btn-carrito">
+      <button id="btn-carrito" class="btn-carrito" aria-label="Ver carrito">
         <i class="fas fa-shopping-cart"></i>
         <span id="carrito-contador">0</span>
       </button>
     </div>
-    <nav class="navbar navbar-expand-lg text-center">
+    <nav class="navbar navbar-expand-lg">
       <div class="container-fluid">
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarTogglerDemo01"
           aria-controls="navbarTogglerDemo01" aria-expanded="false" aria-label="Toggle navigation">
@@ -46,8 +47,8 @@
         </button>
         <div class="collapse navbar-collapse" id="navbarTogglerDemo01">
           <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-            <li class="nav-item home">
-              <a class="nav-link active" aria-current="page" href="../index.html">Home</a>
+            <li class="nav-item">
+              <a class="nav-link active" aria-current="page" href="../index.html">Inicio</a>
             </li>
             <li class="nav-item">
               <a class="nav-link" href="vestidos.html">Vestidos</a>
@@ -70,25 +71,27 @@
   <div id="menu-carrito" class="menu-carrito">
     <div class="carrito-header">
       <h3>Carrito de Compras</h3>
-      <button id="cerrar-carrito" class="btn-cerrar">&times;</button>
+      <button id="cerrar-carrito" class="btn-cerrar" aria-label="Cerrar carrito">&times;</button>
     </div>
-    <ul id="lista-carrito"></ul>
+    <ul id="lista-carrito" aria-live="polite"></ul>
     <p id="total-carrito">Total: $0.00</p>
   </div>
+
   <section class="filtros-productos container mt-4 mb-4">
     <div class="row">
       <div class="col-md-4 mb-3">
-        <input type="text" id="buscador-productos" class="form-control" placeholder="Buscar productos...">
+        <input type="text" id="buscador-productos" class="form-control" placeholder="Buscar productos..."
+          aria-label="Buscar productos">
       </div>
       <div class="col-md-4 mb-3">
-        <select id="filtro-precio" class="form-select">
+        <select id="filtro-precio" class="form-select" aria-label="Ordenar por precio">
           <option value="">Ordenar por precio</option>
           <option value="asc">Menor a mayor</option>
-          <option value="desc">Mayor a menor precio</option>
+          <option value="desc">Mayor a menor</option>
         </select>
       </div>
       <div class="col-md-4 mb-3">
-        <select id="filtro-talle" class="form-select">
+        <select id="filtro-talle" class="form-select" aria-label="Filtrar por talle">
           <option value="todos">Todos los talles</option>
           <option value="XS">XS</option>
           <option value="S">S</option>
@@ -99,30 +102,33 @@
       </div>
     </div>
   </section>
+
   <section class="venta-productos container">
     <div class="row row-cols-1 row-cols-md-3 g-1">
+
       <div class="col">
         <div class="card text-center" data-talle="XS">
           <img src="../img/accesorios.webp" class="card-img-top" alt="Producto XS" />
           <div class="card-body">
-            <h5 class="card-title">Nombre del Producto XS</h5>
+            <h5 class="card-title">Nombre del Producto</h5>
             <p class="card-text">
               Perfecto para la fiesta de tus sueños. <br />
-              $ 89.000
+              $ 85.000
             </p>
             <button class="btn btn-primary agregar-al-carrito" data-nombre="Nombre del Producto XS" data-precio="89000"
               data-imagen="../img/accesorios.webp" data-talle="XS">Agregar al Carrito</button>
           </div>
         </div>
       </div>
+
       <div class="col">
         <div class="card text-center" data-talle="S">
           <img src="../img/accesorios.webp" class="card-img-top" alt="Producto S" />
           <div class="card-body">
-            <h5 class="card-title">Nombre del Producto S</h5>
+            <h5 class="card-title">Nombre del Producto </h5>
             <p class="card-text">
               Perfecto para la fiesta de tus sueños. <br />
-              $ 92.000
+              $ 87.000
             </p>
             <button class="btn btn-primary agregar-al-carrito" data-nombre="Nombre del Producto S" data-precio="92000"
               data-imagen="../img/accesorios.webp" data-talle="S">Agregar al Carrito</button>
@@ -133,40 +139,42 @@
         <div class="card text-center" data-talle="M">
           <img src="../img/accesorios.webp" class="card-img-top" alt="Producto M" />
           <div class="card-body">
-            <h5 class="card-title">Nombre del Producto M</h5>
+            <h5 class="card-title">Nombre del Producto</h5>
             <p class="card-text">
               Perfecto para la fiesta de tus sueños. <br />
-              $ 94.000
+              $ 90.000
             </p>
-            <button class="btn btn-primary agregar-al-carrito" data-nombre="Nombre del Producto M" data-precio="94000"
+            <button class="btn btn-primary agregar-al-carrito" data-nombre="Nombre del Producto M" data-precio="90000"
               data-imagen="../img/accesorios.webp" data-talle="M">Agregar al Carrito</button>
           </div>
         </div>
       </div>
+      
       <div class="col">
         <div class="card text-center" data-talle="L">
           <img src="../img/accesorios.webp" class="card-img-top" alt="Producto L" />
           <div class="card-body">
-            <h5 class="card-title">Nombre del Producto L</h5>
+            <h5 class="card-title">Nombre del Producto</h5>
             <p class="card-text">
               Perfecto para la fiesta de tus sueños. <br />
-              $ 96.000
+              $ 97.000
             </p>
-            <button class="btn btn-primary agregar-al-carrito" data-nombre="Nombre del Producto L" data-precio="96000"
+            <button class="btn btn-primary agregar-al-carrito" data-nombre="Nombre del Producto L" data-precio="97000"
               data-imagen="../img/accesorios.webp" data-talle="L">Agregar al Carrito</button>
           </div>
         </div>
       </div>
+
       <div class="col">
         <div class="card text-center" data-talle="XL">
           <img src="../img/accesorios.webp" class="card-img-top" alt="Producto XL" />
           <div class="card-body">
-            <h5 class="card-title">Nombre del Producto XL</h5>
+            <h5 class="card-title">Nombre del Producto</h5>
             <p class="card-text">
               Perfecto para la fiesta de tus sueños. <br />
-              $ 98.000
+              $ 99.000
             </p>
-            <button class="btn btn-primary agregar-al-carrito" data-nombre="Nombre del Producto XL" data-precio="98000"
+            <button class="btn btn-primary agregar-al-carrito" data-nombre="Nombre del Producto XL" data-precio="99000"
               data-imagen="../img/accesorios.webp" data-talle="XL">Agregar al Carrito</button>
           </div>
         </div>
@@ -177,16 +185,11 @@
   <footer>
     <div class="contenido-footer">
       <div class="footer-redes">
-        <a href="https://www.instagram.com/lastresindumentaria?igsh=aGRhYjlqOW92ZGhj"><i
+        <a href="https://www.instagram.com/lastresindumentaria?igsh=aGRhYjlqOW92ZGhj" aria-label="Instagram"><i
             class="fab fa-instagram"></i></a>
-        <a
-          href="https://l.instagram.com/?u=https%3A%2F%2Fwa.link%2Fe8g9le&e=AT0q4f2pm13S3frHLUVcD_mMEDZCjfsge8QtmsnI4-LYssG2ePCCNja4WxYtE0YE37hIk4WU3z9PYW0A5s_bHanUhdRNzlXuLV9KaZQ"><i
-            class="fab fa-whatsapp"></i></a>
+        <a href="https://wa.link/e8g9le" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
       </div>
-      <iframe
-        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d217.22537860459315!2d-66.85254747314272!3d-29.411078236710978!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x9427da4a54033935%3A0x842a4e6c8b4f737f!2sSantiago%20del%20Estero%20187%2C%20F5302%20La%20Rioja!5e0!3m2!1ses-419!2sar!4v1723182936413!5m2!1ses-419!2sar"
-        alt="Mapa de ubicación del ShowRoom" title="Mapa">
-      </iframe>
+      <iframe src="https://www.google.com/maps/embed?pb=..." title="Mapa de ubicación del ShowRoom"></iframe>
       <div class="links-footer">
         <a href="vestidos.html">Vestidos</a>
         <a href="accesorios.html">Accesorios</a>

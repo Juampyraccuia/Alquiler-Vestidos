@@ -74,7 +74,7 @@ document.addEventListener('DOMContentLoaded', function () {
       const talle = card.dataset.talle || 'Único';
       return { nombre, precio, imagen, talle };
     });
-    mostrarProductos(productos); // Mostrar todos los productos al cargar
+    mostrarProductos(productos);
   }
 
   function filtrarProductos() {
@@ -98,12 +98,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
   function mostrarProductos(productosMostrar) {
     const contenedorProductos = document.querySelector('.row-cols-1');
-    if (!contenedorProductos) {
-      console.error('El contenedor de productos no se encontró.');
-      return; // Salir de la función si no se encuentra el contenedor
-    }
-
-    // Limpiar el contenedor antes de agregar nuevos productos
+    if (!contenedorProductos) return;
     contenedorProductos.innerHTML = productosMostrar.map(producto => `
       <div class="col">
         <div class="card text-center" data-talle="${producto.talle}">
@@ -127,14 +122,12 @@ document.addEventListener('DOMContentLoaded', function () {
       </div>
     `).join('');
 
-    // Volver a agregar los event listeners a los nuevos botones
     document.querySelectorAll('.agregar-al-carrito').forEach(button => {
-      button.removeEventListener('click', agregarAlCarritoHandler); // Eliminar listener previo
+      button.removeEventListener('click', agregarAlCarritoHandler);
       button.addEventListener('click', agregarAlCarritoHandler);
     });
   }
 
-  // Función para manejar el evento de agregar al carrito
   function agregarAlCarritoHandler(e) {
     const button = e.currentTarget;
     const nombre = button.dataset.nombre;
@@ -144,7 +137,6 @@ document.addEventListener('DOMContentLoaded', function () {
     agregarAlCarrito(nombre, precio, imagen, talle);
   }
 
-  // Event Listeners
   listaCarrito.addEventListener('click', function (e) {
     const nombre = e.target.dataset.nombre;
     const talle = e.target.dataset.talle;
@@ -181,7 +173,6 @@ document.addEventListener('DOMContentLoaded', function () {
   filtroPrecio.addEventListener('change', filtrarProductos);
   filtroTalle.addEventListener('change', filtrarProductos);
 
-  // Inicialización
   cargarCarrito();
   cargarProductos();
 });
