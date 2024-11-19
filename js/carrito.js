@@ -178,7 +178,6 @@ document.addEventListener('DOMContentLoaded', function () {
     mostrarProductos(productos, filtroPrecio.value, talleSeleccionado);  // Pasar el precio seleccionado también
   });
 
-
   // Función para manejar el evento de agregar al carrito
   function agregarAlCarritoHandler(e) {
     const button = e.currentTarget;
@@ -189,7 +188,52 @@ document.addEventListener('DOMContentLoaded', function () {
     agregarAlCarrito(nombre, precio, imagen, talle);
   }
 
-  // Inicialización
-  cargarCarrito();
+  // Función para disminuir cantidad de producto en el carrito
+  listaCarrito.addEventListener('click', function (e) {
+    if (e.target.classList.contains('btn-disminuir')) {
+      const nombre = e.target.dataset.nombre;
+      const talle = e.target.dataset.talle;
+      const producto = carrito.find(item => item.nombre === nombre && item.talle === talle);
+      if (producto && producto.cantidad > 1) {
+        producto.cantidad--;
+        actualizarCarrito();
+        guardarCarrito();
+      }
+    }
+  });
+
+  // Función para aumentar cantidad de producto en el carrito
+  listaCarrito.addEventListener('click', function (e) {
+    if (e.target.classList.contains('btn-aumentar')) {
+      const nombre = e.target.dataset.nombre;
+      const talle = e.target.dataset.talle;
+      const producto = carrito.find(item => item.nombre === nombre && item.talle === talle);
+      if (producto) {
+        producto.cantidad++;
+        actualizarCarrito();
+        guardarCarrito();
+      }
+    }
+  });
+
+  // Función para eliminar producto del carrito
+  listaCarrito.addEventListener('click', function (e) {
+    if (e.target.classList.contains('btn-eliminar')) {
+      const nombre = e.target.dataset.nombre;
+      const talle = e.target.dataset.talle;
+      carrito = carrito.filter(item => item.nombre !== nombre || item.talle !== talle);
+      actualizarCarrito();
+      guardarCarrito();
+    }
+  });
+
+  // Abrir el carrito cuando se hace clic en el botón
+  btnCarrito.addEventListener('click', abrirCarrito);
+
+  // Cerrar el carrito cuando se hace clic en el botón de cerrar
+  btnCerrarCarrito.addEventListener('click', cerrarCarrito);
+
+  // Cargar productos y carrito al iniciar la página
   cargarProductos();
+  cargarCarrito();
 });
