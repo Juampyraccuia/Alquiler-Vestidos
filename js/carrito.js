@@ -11,6 +11,7 @@ document.addEventListener('DOMContentLoaded', function () {
   const filtroPrecio = document.getElementById('filtro-precio');
   const filtroTalle = document.getElementById('filtro-talle');
 
+  // Función para agregar al carrito
   function agregarAlCarrito(nombre, precio, imagen, talle) {
     const productoExistente = carrito.find(item => item.nombre === nombre && item.talle === talle);
     if (productoExistente) {
@@ -18,11 +19,13 @@ document.addEventListener('DOMContentLoaded', function () {
     } else {
       carrito.push({ nombre, precio, imagen, talle, cantidad: 1 });
     }
+    console.log("Carrito actualizado:", carrito);
     actualizarCarrito();
     guardarCarrito();
     abrirCarrito();
   }
 
+  // Función para actualizar el carrito
   function actualizarCarrito() {
     listaCarrito.innerHTML = '';
     const total = carrito.reduce((sum, item) => {
@@ -45,10 +48,12 @@ document.addEventListener('DOMContentLoaded', function () {
     contadorCarrito.textContent = carrito.reduce((sum, item) => sum + item.cantidad, 0);
   }
 
+  // Guardar el carrito en localStorage
   function guardarCarrito() {
     localStorage.setItem('carrito', JSON.stringify(carrito));
   }
 
+  // Cargar el carrito desde localStorage
   function cargarCarrito() {
     const carritoGuardado = localStorage.getItem('carrito');
     if (carritoGuardado) {
@@ -57,77 +62,124 @@ document.addEventListener('DOMContentLoaded', function () {
     }
   }
 
+  // Función para abrir el carrito
   function abrirCarrito() {
     menuCarrito.classList.add('show');
   }
 
+  // Función para cerrar el carrito
   function cerrarCarrito() {
     menuCarrito.classList.remove('show');
   }
 
+  // Cargar productos desde el archivo JSON
   function cargarProductos() {
-    const cards = document.querySelectorAll('.card');
-    productos = Array.from(cards).map(card => {
-      const nombre = card.querySelector('.card-title').textContent;
-      const precio = parseFloat(card.querySelector('.card-text').textContent.match(/\d+(\.\d+)?/)[0]);
-      const imagen = card.querySelector('img').src;
-      const talle = card.dataset.talle || 'Único';
-      return { nombre, precio, imagen, talle };
-    });
-    mostrarProductos(productos);
+    fetch('../data/productos.json')
+      .then(response => response.json())
+      .then(data => {
+        productos = data.productos;
+        console.log('Productos cargados:', productos);
+        if (Array.isArray(productos)) {
+          filtrarProductosPorCategoria();
+          mostrarProductos(productos);  // Mostrar productos cargados
+        } else {
+          console.error('Los productos no son un array');
+        }
+      })
+      .catch(error => {
+        console.error('Error al cargar los productos:', error);
+      });
   }
 
-  function filtrarProductos() {
-    const busqueda = buscadorProductos.value.toLowerCase();
-    const ordenPrecio = filtroPrecio.value;
-    const talleSeleccionado = filtroTalle.value;
-
-    let productosFiltrados = productos.filter(producto =>
-      producto.nombre.toLowerCase().includes(busqueda) &&
-      (talleSeleccionado === 'todos' || producto.talle === talleSeleccionado)
-    );
-
-    if (ordenPrecio === 'asc') {
-      productosFiltrados.sort((a, b) => a.precio - b.precio);
-    } else if (ordenPrecio === 'desc') {
-      productosFiltrados.sort((a, b) => b.precio - a.precio);
+  // Filtrar productos por categoría
+  function filtrarProductosPorCategoria() {
+    if (!Array.isArray(productos)) {
+      console.error('Productos no es un array');
+      return;
     }
 
-    mostrarProductos(productosFiltrados);
+    const pathname = window.location.pathname;
+    let categoriaSeleccionada = '';
+
+    if (pathname.includes('accesorios.html')) {
+      categoriaSeleccionada = 'Accesorios';
+    } else if (pathname.includes('carteras.html')) {
+      categoriaSeleccionada = 'Carteras';
+    } else if (pathname.includes('ropaInterior.html')) {
+      categoriaSeleccionada = 'Ropa Interior';
+    }
+
+    if (categoriaSeleccionada) {
+      productos = productos.filter(producto => producto.categoria === categoriaSeleccionada);
+      console.log('Productos filtrados por categoría:', productos);
+    }
   }
 
-  function mostrarProductos(productosMostrar) {
+  // Función para mostrar productos, con orden de precio y filtro por talle
+  function mostrarProductos(productosMostrar, ordenarPorPrecio = 'asc', talleSeleccionado = '') {
     const contenedorProductos = document.querySelector('.row-cols-1');
-    if (!contenedorProductos) return;
+    if (!contenedorProductos) {
+      console.error('El contenedor de productos no se encontró.');
+      return;
+    }
+
+    contenedorProductos.innerHTML = '';
+
+    // Filtrar productos por talle
+    if (talleSeleccionado && talleSeleccionado !== 'todos') {
+      productosMostrar = productosMostrar.filter(producto => producto.talle === talleSeleccionado);
+    }
+
+    // Ordenar productos por precio
+    if (ordenarPorPrecio === 'asc') {
+      productosMostrar.sort((a, b) => a.precio - b.precio);
+    } else if (ordenarPorPrecio === 'desc') {
+      productosMostrar.sort((a, b) => b.precio - a.precio);
+    }
+
     contenedorProductos.innerHTML = productosMostrar.map(producto => `
-      <div class="col">
-        <div class="card text-center" data-talle="${producto.talle}">
-          <img src="${producto.imagen}" class="card-img-top" alt="${producto.nombre}" />
-          <div class="card-body">
-            <h5 class="card-title">${producto.nombre}</h5>
-            <p class="card-text">
-              Perfecto para la fiesta de tus sueños. <br />
-              $ ${producto.precio.toFixed(2)}
-            </p>
-            <p>Talle: ${producto.talle}</p>
-            <button class="btn btn-primary agregar-al-carrito" 
-              data-nombre="${producto.nombre}" 
-              data-precio="${producto.precio}" 
-              data-imagen="${producto.imagen}"
-              data-talle="${producto.talle}">
-              Agregar al Carrito
-            </button>
-          </div>
+    <div class="col">
+      <div class="card text-center" data-talle="${producto.talle}">
+        <img src="${producto.imagen}" class="card-img-top" alt="${producto.nombre}" />
+        <div class="card-body">
+          <h5 class="card-title">${producto.nombre}</h5>
+          <p class="card-text">
+            ${producto.descripcion} <br />
+            Talle: ${producto.talle}<br />
+            $ ${producto.precio.toFixed(2)} 
+          </p>
+          <button class="btn btn-primary agregar-al-carrito" 
+            data-nombre="${producto.nombre}" 
+            data-precio="${producto.precio}" 
+            data-imagen="${producto.imagen}"
+            data-talle="${producto.talle}">
+            Agregar al Carrito
+          </button>
         </div>
       </div>
-    `).join('');
+    </div>
+  `).join('');
 
+    // Asignar el evento a los botones de agregar al carrito
     document.querySelectorAll('.agregar-al-carrito').forEach(button => {
-      button.removeEventListener('click', agregarAlCarritoHandler);
       button.addEventListener('click', agregarAlCarritoHandler);
     });
   }
 
+  // Event Listener para el filtro de precio
+  filtroPrecio.addEventListener('change', function (e) {
+    const ordenSeleccionado = e.target.value;
+    mostrarProductos(productos, ordenSeleccionado, filtroTalle.value);  // Pasar el talle seleccionado también
+  });
+
+  // Event Listener para el filtro de talle
+  filtroTalle.addEventListener('change', function (e) {
+    const talleSeleccionado = e.target.value;
+    mostrarProductos(productos, filtroPrecio.value, talleSeleccionado);  // Pasar el precio seleccionado también
+  });
+
+
+  // Función para manejar el evento de agregar al carrito
   function agregarAlCarritoHandler(e) {
     const button = e.currentTarget;
     const nombre = button.dataset.nombre;
@@ -137,42 +189,7 @@ document.addEventListener('DOMContentLoaded', function () {
     agregarAlCarrito(nombre, precio, imagen, talle);
   }
 
-  listaCarrito.addEventListener('click', function (e) {
-    const nombre = e.target.dataset.nombre;
-    const talle = e.target.dataset.talle;
-    if (e.target.classList.contains('btn-eliminar')) {
-      carrito = carrito.filter(item => !(item.nombre === nombre && item.talle === talle));
-    } else if (e.target.classList.contains('btn-disminuir')) {
-      const item = carrito.find(item => item.nombre === nombre && item.talle === talle);
-      if (item && item.cantidad > 1) {
-        item.cantidad--;
-      } else {
-        carrito = carrito.filter(item => !(item.nombre === nombre && item.talle === talle));
-      }
-    } else if (e.target.classList.contains('btn-aumentar')) {
-      const item = carrito.find(item => item.nombre === nombre && item.talle === talle);
-      if (item) {
-        item.cantidad++;
-      }
-    }
-    actualizarCarrito();
-    guardarCarrito();
-  });
-
-  btnCarrito.addEventListener('click', function (e) {
-    e.preventDefault();
-    abrirCarrito();
-  });
-
-  btnCerrarCarrito.addEventListener('click', function (e) {
-    e.preventDefault();
-    cerrarCarrito();
-  });
-
-  buscadorProductos.addEventListener('input', filtrarProductos);
-  filtroPrecio.addEventListener('change', filtrarProductos);
-  filtroTalle.addEventListener('change', filtrarProductos);
-
+  // Inicialización
   cargarCarrito();
   cargarProductos();
 });

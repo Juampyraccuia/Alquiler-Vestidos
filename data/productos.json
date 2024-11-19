@@ -1,0 +1,85 @@
+{
+  "productos": [
+    {
+      "id": 1,
+      "nombre": "Cartera de Cuero",
+      "descripcion": "Cartera de cuero genuino con múltiples compartimentos.",
+      "precio": 45.99,
+      "categoria": "Carteras",
+      "imagen": "../img/cartera.webp",
+      "talle": "Unico"
+    },
+    {
+      "id": 2,
+      "nombre": "Cartera de Mano Elegante",
+      "descripcion": "Cartera de mano elegante para ocasiones especiales.",
+      "precio": 35.50,
+      "categoria": "Carteras",
+      "imagen": "../img/cartera.webp",
+      "talle": "Unico"
+    },
+    {
+      "id": 3,
+      "nombre": "Cartera de Viaje",
+      "descripcion": "Cartera espaciosa y cómoda para viajes.",
+      "precio": 60.00,
+      "categoria": "Carteras",
+      "imagen": "../img/cartera.webp",
+      "talle": "Unico"
+    },
+    {
+      "id": 4,
+      "nombre": "Bragas de Algodón",
+      "descripcion": "Bragas de algodón cómodas y suaves, disponibles en varios colores.",
+      "precio": 15.99,
+      "categoria": "Ropa Interior",
+      "imagen": "../img/ropa-interior.webp",
+      "talle": "S"
+    },
+    {
+      "id": 5,
+      "nombre": "Sosten Push-up",
+      "descripcion": "Sosten push-up para realzar la figura, disponible en varios tamaños.",
+      "precio": 30.00,
+      "categoria": "Ropa Interior",
+      "imagen": "../img/ropa-interior.webp",
+      "talle": "M"
+    },
+    {
+      "id": 6,
+      "nombre": "Set de Lencería Sexy",
+      "descripcion": "Set de lencería sexy con detalles de encaje, elegante y provocativo.",
+      "precio": 40.00,
+      "categoria": "Ropa Interior",
+      "imagen": "../img/ropa-interior.webp",
+      "talle": "L"
+    },
+    {
+      "id": 7,
+      "nombre": "Collar de Plata",
+      "descripcion": "Elegante collar de plata con diseño moderno.",
+      "precio": 25.99,
+      "categoria": "Accesorios",
+      "imagen": "../img/accesorios.webp",
+      "talle": "Unico"
+    },
+    {
+      "id": 8,
+      "nombre": "Pulsera de Cuero",
+      "descripcion": "Pulsera de cuero con detalles metálicos, unisex.",
+      "precio": 18.50,
+      "categoria": "Accesorios",
+      "imagen": "../img/accesorios.webp",
+      "talle": "Unico"
+    },
+    {
+      "id": 9,
+      "nombre": "Reloj de Acero Inoxidable",
+      "descripcion": "Reloj elegante de acero inoxidable, resistente al agua.",
+      "precio": 70.00,
+      "categoria": "Accesorios",
+      "imagen": "../img/accesorios.webp",
+      "talle": "Unico"
+    }
+  ]
+}
