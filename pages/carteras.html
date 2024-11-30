@@ -8,39 +8,22 @@
     integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous" />
   <link rel="stylesheet" href="../css/style.css" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" />
-  <title>Ropa Interior</title>
-  <meta name="title" content="Vestidos en Alquiler" />
-  <meta name="description" content="Quieres alquilar tu vestido? Esta es la mejor pagina" />
-
-  <!-- Open Graph / Facebook -->
-  <meta property="og:type" content="website" />
-  <meta property="og:url" content="https://juampyraccuia.github.io/Alquiler-Vestidos/index.html" />
-  <meta property="og:title" content="Vestidos en Alquiler" />
-  <meta property="og:description" content="Quieres alquilar tu vestido? Esta es la mejor pagina" />
-  <meta property="og:image" content="https://metatags.io/images/meta-tags.png" />
-
-  <!-- Twitter -->
-  <meta property="twitter:card" content="summary_large_image" />
-  <meta property="twitter:url" content="https://juampyraccuia.github.io/Alquiler-Vestidos/index.html" />
-  <meta property="twitter:title" content="Vestidos en Alquiler" />
-  <meta property="twitter:description" content="Quieres alquilar tu vestido? Esta es la mejor pagina" />
-  <meta property="twitter:image" content="https://metatags.io/images/meta-tags.png" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sweetalert2@11/dist/sweetalert2.min.css">
+  <title>Carteras</title>
 </head>
 
 <body>
   <header>
     <div class="top-bar">
       <div class="logo">
-        <a href="../index.html">
-          <img src="../img/logo.png" alt="Logo del sitio" />
-        </a>
+        <a href="../index.html"><img src="../img/logo.png" alt="Logo" /></a>
       </div>
-      <button id="btn-carrito" class="btn btn-carrito" aria-label="Abrir carrito">
+      <button id="btn-carrito" class="btn-carrito">
         <i class="fas fa-shopping-cart"></i>
         <span id="carrito-contador">0</span>
       </button>
     </div>
-    <nav class="navbar navbar-expand-lg">
+    <nav class="navbar navbar-expand-lg text-center">
       <div class="container-fluid">
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarTogglerDemo01"
           aria-controls="navbarTogglerDemo01" aria-expanded="false" aria-label="Toggle navigation">
@@ -72,7 +55,7 @@
   <div id="menu-carrito" class="menu-carrito">
     <div class="carrito-header">
       <h3>Carrito de Compras</h3>
-      <button id="cerrar-carrito" class="btn-cerrar" aria-label="Cerrar carrito">&times;</button>
+      <button id="cerrar-carrito" class="btn-cerrar">&times;</button>
     </div>
     <ul id="lista-carrito"></ul>
     <p id="total-carrito">Total: $0.00</p>
@@ -81,24 +64,13 @@
   <section class="filtros-productos container mt-4 mb-4">
     <div class="row">
       <div class="col-md-4 mb-3">
-        <input type="text" id="buscador-productos" class="form-control" placeholder="Buscar productos..."
-          aria-label="Buscar productos">
+        <input type="text" id="buscador-productos" class="form-control" placeholder="Buscar productos...">
       </div>
       <div class="col-md-4 mb-3">
-        <select id="filtro-precio" class="form-select" aria-label="Filtro de precio">
+        <select id="filtro-precio" class="form-select">
           <option value="">Ordenar por precio</option>
           <option value="asc">Menor a mayor</option>
-          <option value="desc">Mayor a menor</option>
-        </select>
-      </div>
-      <div class="col-md-4 mb-3">
-        <select id="filtro-talle" class="form-select" aria-label="Filtro de talles">
-          <option value="todos">Todos los talles</option>
-          <option value="XS">XS</option>
-          <option value="S">S</option>
-          <option value="M">M</option>
-          <option value="L">L</option>
-          <option value="XL">XL</option>
+          <option value="desc">Mayor a menor precio</option>
         </select>
       </div>
     </div>
@@ -106,6 +78,7 @@
 
   <section class="venta-productos container">
     <div class="row row-cols-1 row-cols-md-3 g-1">
+
     </div>
   </section>
 
@@ -116,23 +89,17 @@
             class="fab fa-instagram"></i></a>
         <a href="https://wa.link/e8g9le" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
       </div>
-      <iframe
-        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d217.22537860459315!2d-66.85254747314272!3d-29.411078236710978!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x9427da4a54033935%3A0x842a4e6c8b4f737f!2sSantiago%20del%20Estero%20187%2C%20F5302%20La%20Rioja!5e0!3m2!1ses-419!2sar!4v1723182936413!5m2!1ses-419!2sar"
-        width="78%" height="250" style="border:0;" allowfullscreen="" loading="lazy"
-        title="Mapa de ubicación del ShowRoom"></iframe>
-      <div class="links-footer mt-3">
-        <a href="vestidos.html">Vestidos</a>
-        <a href="accesorios.html">Accesorios</a>
-        <a href="carteras.html">Carteras</a>
-        <a href="ropaInterior.html">Ropa Interior</a>
-      </div>
     </div>
   </footer>
 
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
-    integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"
+    integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r"
+    crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.min.js"
+    integrity="sha384-0pUGZvbkm6XF6gxjEnlmuGrJXVbNuzT9qBBavbLwCsOGabYfZo0T0to5eqruptLy"
     crossorigin="anonymous"></script>
   <script src="../js/carrito.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 </body>
 
 </html>

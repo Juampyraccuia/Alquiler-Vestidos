@@ -5,7 +5,7 @@
       "nombre": "Cartera de Cuero",
       "descripcion": "Cartera de cuero genuino con múltiples compartimentos.",
       "precio": 45.99,
-      "categoria": "Carteras",
+      "categoria": "carteras",
       "imagen": "../img/cartera.webp",
       "talle": "Unico"
     },
@@ -14,7 +14,7 @@
       "nombre": "Cartera de Mano Elegante",
       "descripcion": "Cartera de mano elegante para ocasiones especiales.",
       "precio": 35.50,
-      "categoria": "Carteras",
+      "categoria": "carteras",
       "imagen": "../img/cartera.webp",
       "talle": "Unico"
     },
@@ -32,7 +32,7 @@
       "nombre": "Bragas de Algodón",
       "descripcion": "Bragas de algodón cómodas y suaves, disponibles en varios colores.",
       "precio": 15.99,
-      "categoria": "Ropa Interior",
+      "categoria": "ropa interior",
       "imagen": "../img/ropa-interior.webp",
       "talle": "S"
     },
@@ -41,7 +41,7 @@
       "nombre": "Sosten Push-up",
       "descripcion": "Sosten push-up para realzar la figura, disponible en varios tamaños.",
       "precio": 30.00,
-      "categoria": "Ropa Interior",
+      "categoria": "ropa interior",
       "imagen": "../img/ropa-interior.webp",
       "talle": "M"
     },
